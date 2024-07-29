@@ -9,26 +9,22 @@
 <body>
     <h1>Greek Mythology Gods</h1>
     
-    <form id="search-god">
-    <h4>God Ancestry</h4>
-    <label for="new-name">God's Name: </label>
-    <input type="text" name="name" id="new-name" />
-    <input type="submit" id='submit-button' value="Investigate" />
-    </form>
+    <input type="text" class="search-bar" placeholder="Search for a god...">
     
-    <div id= "display" class="display">
+    <div class="display">
         <h2>Display</h2>
-        <p>Information about the selected god appear here.</p>
+        <p>Information about the selected god will appear here.</p>
     </div>
     
     <div id="god-grid" class="god-grid">
         <div class="god-card">
-            <img id="detail-image" src="placeholder.jpg" alt="God Image">
-            <p id="god-name">God Name</p>
+            <img src="placeholder.jpg" alt="God Image">
+            <p>God Name</p>
         </div>
         <div class="god-card">
             <img src="placeholder.jpg" alt="God Image">
             <p>God Name</p>
+            <button class="like-button">Like <span class="like-count">0</span></button>
         </div>
     </div>
 </body>

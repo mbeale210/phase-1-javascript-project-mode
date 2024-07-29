@@ -100,3 +100,23 @@ form h4 {
   color: white;
   background-color: black;
 }
+.like-button {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.like-button:hover {
+  background-color: #e0e0e0;
+}
+
+.like-button.liked {
+  background-color: #ff69b4;
+  color: white;
+}
+
+.like-count {
+  margin-left: 5px;
+}
