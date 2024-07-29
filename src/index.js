@@ -2,9 +2,7 @@
 const API = "file://wsl.localhost/Ubuntu/home/mbeale/Development/code/phase-1/phase-1-javascript-project-mode/db.json"
 const godsDiv = document.getElementById("display");
 const godsImage = document.getElementById("detail-image");
-const godsName = document.getElementById("god-name");
-
-
+const godsName = document.getElementById("god-name")
 
 const displayGods = () => {
   fetch(API)
