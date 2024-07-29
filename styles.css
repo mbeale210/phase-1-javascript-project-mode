@@ -1,122 +1,91 @@
 * {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  padding: 1rem;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
   text-align: center;
-  background-color: #fafafa;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin-bottom: 20px;
+  font-size: 2.5em;
 }
 
-header {
-  padding: 0.5rem;
-  width: 100%;
+/* Search form styling */
+#search-god {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#search-god h4 {
+  margin-bottom: 10px;
+}
+
+#search-god label {
+  margin-right: 10px;
+}
+
+#new-name {
+  padding: 8px;
+  width: 200px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#submit-button {
+  padding: 8px 16px;
+  background-color: #4CAF50;
   color: white;
-  background-color: black;
-}
-
-#ramen-menu {
-  display: flex;
-  overflow-x: auto;
-  margin: 1rem 0;
-  max-width: calc(100vw - 2rem);
-}
-
-#ramen-menu img {
-  flex: 0 1 auto;
-  height: 150px;
-  margin-right: 0.5rem;
-  cursor: pointer;
-}
-
-#ramen-menu img:last-child {
-  margin-right: 0;
-}
-
-#ramen-detail {
-  position: relative;
-}
-
-.detail-image {
-  height: 350px;
-}
-
-.name,
-.restaurant {
-  position: absolute;
-  left: 10px;
-  padding: 0.25rem 5rem 0.25rem 1rem;
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-.name {
-  bottom: 60px;
-}
-
-.restaurant {
-  bottom: 20px;
-}
-
-form {
-  margin: 1rem 0;
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-input,
-textarea {
-  font-size: 1rem;
-  border: 1px solid black;
-  background-color: white;
-  padding: 0.5rem;
-  margin: 0.25rem 0;
-  width: 100%;
-}
-
-input[type="submit"] {
-  color: white;
-  border: 1px solid white;
-  background-color: black;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-input[type="submit"]:active {
-  background-color: gray;
-}
-
-form h4 {
-  width: 100%;
-  padding: 0.25rem;
-  margin: 0.5rem 0;
-  color: white;
-  background-color: black;
-}
-.like-button {
-  background-color: #f0f0f0;
   border: none;
-  padding: 5px 10px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
-.like-button:hover {
-  background-color: #e0e0e0;
+#submit-button:hover {
+  background-color: #45a049;
 }
 
-.like-button.liked {
-  background-color: #ff69b4;
-  color: white;
+/* Display area */
+.display {
+  border: 2px solid #333;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-.like-count {
-  margin-left: 5px;
+.display h2 {
+  margin-bottom: 10px;
+}
+
+/* God grid */
+.god-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.god-card {
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+}
+
+.god-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.god-card p {
+  font-weight: bold;
 }
