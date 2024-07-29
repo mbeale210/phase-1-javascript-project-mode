@@ -1,13 +1,20 @@
-// our javascript code goes here
-const API = "file://wsl.localhost/Ubuntu/home/mbeale/Development/code/phase-1/phase-1-javascript-project-mode/db.json"
+
+const godsAPI = "http://localhost:3000/gods";
 const godsDiv = document.getElementById("display");
-const godsImage = document.getElementById("detail-image");
-const godsName = document.getElementById("god-name")
+const godsName = document.getElementById("god-name");
 
-const displayGods = () => {
-  fetch(API)
-    .then((res) => res.json())
-    .then(godsInfo);
+fetch(godsAPI)
+  .then((res) => res.json())
+  .then(renderGods);
 
-};
+function renderGods(gods) {
+  gods.forEach(renderGod);
+}
+
+function renderGod(god) {
+  const godsImageElement = document.createElement("img");
+  godsImageElement.src = gods.url;
+  godsDiv.append(godsImageElement);
+}
+
 // db.json populated from api source:https://github.com/betalantz/json-server-collection/blob/main/greek-mythology/db.json
