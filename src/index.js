@@ -34,7 +34,8 @@ function renderGodCards(gods) {
 function createLikeButton(god) {
   const likeButton = document.createElement("button");
   likeButton.classList.add("like-button");
-  likeButton.textContent = "Like";
+  likeButton.textContent = "like 🏛";
+  likeButton.addEventListener("click", () => console.log(`${god.name} was liked`))
   return likeButton;
 }
 
