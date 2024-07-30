@@ -1,3 +1,5 @@
+/* styles.css */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -18,7 +20,6 @@ h1 {
   font-size: 2.5em;
 }
 
-/* Search form styling */
 #search-god {
   text-align: center;
   margin-bottom: 20px;
@@ -52,7 +53,6 @@ h1 {
   background-color: #45a049;
 }
 
-/* Display area */
 .display {
   border: 2px solid #333;
   padding: 20px;
@@ -87,35 +87,4 @@ h1 {
 
 .god-card p {
   font-weight: bold;
-}
-.like-button {
-  background-color: #f0f0f0;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 20px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-  transition: background-color 0.3s ease;
-}
-
-.like-button:hover {
-  background-color: #e0e0e0;
-}
-
-.like-button::before {
-  content: '♥';
-  margin-right: 5px;
-  font-size: 16px;
-}
-
-.like-button.liked {
-  background-color: #ff6b6b;
-  color: white;
-}
-
-.like-button.liked::before {
-  content: '♥';
-  color: white;
 }
