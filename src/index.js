@@ -43,10 +43,20 @@ function createLikeButton(god) {
   const likeButton = document.createElement("button");
   likeButton.classList.add("like-button");
   likeButton.textContent = "Like 🏛";
+
+  let isLiked = false;
+
   likeButton.addEventListener("click", () => {
-    console.log(`${god.name} was liked`);
-    god.likes = (god.likes || 0) + 1;
-    updateLikeCount(god);
+    isLiked = !isLiked; // Toggle the liked state
+
+    if (isLiked) {
+      likeButton.classList.add("liked");
+    } else {
+      likeButton.classList.remove("liked");
+    }
+    //console.log(`${god.name} was liked`);
+    //god.likes = (god.likes || 0) + 1;
+    //updateLikeCount(god);
   });
   return likeButton;
 }

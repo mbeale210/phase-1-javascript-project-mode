@@ -97,6 +97,10 @@ h1 {
   cursor: pointer;
 }
 
+.like-button.liked {
+  background-color: green;
+}
+
 .like-button:hover {
   background-color: #e0e0e0;
 }
