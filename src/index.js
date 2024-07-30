@@ -27,8 +27,8 @@ function renderGodCards(gods) {
     const likeButton = createLikeButton(god);
     godCard.appendChild(likeButton);
 
-    const likeCount = createLikeCount(god);
-    godCard.appendChild(likeCount);
+    const like = createLike(god);
+    godCard.appendChild(like);
 
     godGrid.appendChild(godCard);
   });
@@ -47,16 +47,13 @@ function createLikeButton(god) {
   let isLiked = false;
 
   likeButton.addEventListener("click", () => {
-    isLiked = !isLiked; // Toggle the liked state
+    isLiked = !isLiked; 
 
     if (isLiked) {
       likeButton.classList.add("liked");
     } else {
       likeButton.classList.remove("liked");
     }
-    //console.log(`${god.name} was liked`);
-    //god.likes = (god.likes || 0) + 1;
-    //updateLikeCount(god);
   });
   return likeButton;
 }
@@ -64,22 +61,10 @@ fetchGods().then((gods) => {s
   renderGodCards(gods);
 });
 
-function createLikeCount(god) {
-  const likeCount = document.createElement("span");
-  //likeCount.classList.add("like-count");
-  //likeCount.textContent = `${god.likes || 0}`;
-  return likeCount;
+function createLike(god) {
+  const like = document.createElement("span");
+  return like;
 }
-
-function updateLikeCount(god) {
-  const likeCount = document.querySelector(`.god-card[data-god-id="${god.id}"] .like-count`);
-  if (likeCount) {
-    likeCount.textContent = `${god.likes || 0}`;
-  }
-}
-
-
-
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("search-god");
