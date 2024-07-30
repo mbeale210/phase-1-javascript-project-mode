@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
 
     const nameInput = document.getElementById("new-name");
-    const godName = nameInput.value.trim();
+    const godName = nameInput.value;
 
     if (godName) {
       try {
@@ -78,9 +78,9 @@ document.addEventListener("DOMContentLoaded", () => {
               father.father === mother.father &&
               father.mother === mother.mother
             ) {
-              parentInfo = `<p>Like a lot of gods the parents of ${god.name} (${god.father} and ${god.mother}) are related.</p>`;
+              parentInfo = `<p>Like a lot of gods, the parents of ${god.name} (${god.father} and ${god.mother}) are related.</p>`;
             } else {
-              parentInfo = `<p>The parents of ${god.name} parents (${god.father} and ${god.mother}) are not related.</p>`;
+              parentInfo = `<p>The parents of ${god.name} (${god.father} and ${god.mother}) are not related.</p>`;
             }
           } else {
             parentInfo =
