@@ -595,15 +595,6 @@
       "url": "http://www.theoi.com/image/Z35.4Okeanos.jpg"
     },
     {
-      "name": "Triton",
-      "romanname": "Triton",
-      "power": "Waves, calm seas, herald of Poseidon",
-      "symbol": "Conch shell",
-      "father": "Poseidon",
-      "mother": "Amphitrite",
-      "url": "http://www.theoi.com/image/K16.1Triton.jpg"
-    },
-    {
       "name": "Anemoi",
       "romanname": "Venti",
       "power": "The winds",
@@ -710,15 +701,6 @@
       "father": "Hermes",
       "mother": "Penelope",
       "url": "http://www.theoi.com/image/Z22.4Pan.jpg"
-    },
-    {
-      "name": "Potamoi",
-      "romanname": "Flumina, Amnes",
-      "power": "The rivers",
-      "symbol": "Water-pitcher, cornucopia",
-      "father": "Oceanus",
-      "mother": "Tethys",
-      "url": "http://www.theoi.com/image/O20.5Akheloos.jpg"
     },
     {
       "name": "Priapus",
