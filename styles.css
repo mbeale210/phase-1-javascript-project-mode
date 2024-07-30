@@ -88,3 +88,15 @@ h1 {
 .god-card p {
   font-weight: bold;
 }
+.like-button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.like-button:hover {
+  background-color: #e0e0e0;
+}
