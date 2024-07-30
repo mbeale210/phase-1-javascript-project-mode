@@ -44,50 +44,49 @@ fetchGods().then((gods) => {
 });
 
 
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
-  const godsForm = document.getElementById("search-god");
-  godsForm.addEventListener("submit", parentsSearch);
+  const form = document.getElementById("search-god");
+  const display = document.getElementById("display");
 
-  async function parentsSearch(e) {
-    e.preventDefault(); 
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-    const godNameInput = document.getElementById("god-name").value;
+    const nameInput = document.getElementById("new-name");
+    const godName = nameInput.value.trim();
 
-    try {
-      
-      const response = await fetch("http://localhost:3000/gods");
+    if (godName) {
+      try {
+        const response = await fetch("http://localhost:3000/gods");
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+
+        const gods = await response.json();
+
+        const god = gods.find(
+          (g) => g.name.toLowerCase() === godName.toLowerCase()
+        );
+
+        if (god) {
+          display.innerHTML = `
+            <h2>${god.name}</h2>
+            <p>Roman Name: ${god.romanname}</p>
+            <p>Power: ${god.power}</p>
+            <p>Symbol: ${god.symbol}</p>
+            <p>Father: ${god.father}</p>
+            <p>Mother: ${god.mother}</p>
+            <img src="${god.url}" alt="${god.name}" style="max-width: 300px;">
+          `;
+        } else {
+          display.innerHTML = "<p>No god found with that name.</p>";
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        display.innerHTML = "<p>An error occurred while fetching the data.</p>";
       }
-
-      const gods = await response.json();
-
-      const result = gods.find(
-        (god) => god.name.toLowerCase() === godNameInput.toLowerCase()
-      );
-
-      const displayDiv = document.getElementById("display");
-      displayDiv.innerHTML = "<h2>Display</h2>"; 
-
-      if (result) {
-        displayDiv.innerHTML += `
-          <div class="god-card">
-            <img src="${result.url}" alt="${result.name}" style="width: 150px; height: auto;">
-            <p><strong>Name:</strong> ${result.name}</p>
-          </div>
-        `;
-      } else {
-        displayDiv.innerHTML += "<p>No matching god found.</p>";
-      }
-    } catch (error) {
-      console.error("There was a problem with the fetch operation:", error);
-      const displayDiv = document.getElementById("display");
-      displayDiv.innerHTML =
-        "<h2>Display</h2><p>There was an error fetching the data.</p>";
+    } else {
+      display.innerHTML = "<p>Please enter a god's name.</p>";
     }
-  }
+  });
 });
