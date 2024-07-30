@@ -11,8 +11,8 @@ function renderGods(gods) {
   gods.forEach(renderGod);
 }
 
-function renderGod(god) {
-  const godsImageElement = document.createElement("img");
+function renderGod(gods) {
+  const godsImageElement = document.createElement('img');
   godsImageElement.src = gods.url;
   godsDiv.append(godsImageElement);
 }
