@@ -2,6 +2,7 @@ function fetchGods() {
   return fetch('http://localhost:3000/gods')
     .then(response => response.json());
 }
+
 function renderGodCards(gods) {
   const godGrid = document.getElementById('god-grid');
 
@@ -19,5 +20,13 @@ function renderGodCards(gods) {
     const godName = document.createElement('p');
     godName.textContent = god.name;
     godCard.appendChild(godName);
+
+    godGrid.appendChild(godCard);
   });
 }
+
+// Call the fetchGods function and handle the fetched data
+fetchGods()
+  .then(gods => {
+    renderGodCards(gods);
+  })
