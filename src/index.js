@@ -13,12 +13,12 @@ function renderGodCards(gods) {
     godCard.classList.add('god-card');
 
     const godImage = document.createElement('img');
-    godImage.src = god.url;
-    godImage.alt = god.name;
+    godImage.src = gods.url;
+    godImage.alt = gods.name;
     godCard.appendChild(godImage);
 
     const godName = document.createElement('p');
-    godName.textContent = god.name;
+    godName.textContent = gods.name;
     godCard.appendChild(godName);
 
     godGrid.appendChild(godCard);
