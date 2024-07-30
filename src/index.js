@@ -75,6 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <p>Symbol: ${god.symbol}</p>
             <p>Father: ${god.father}</p>
             <p>Mother: ${god.mother}</p>
+            <p>"are parents related?"</p>
             <img src="${god.url}" alt="${god.name}" style="max-width: 300px;">
           `;
         } else {
