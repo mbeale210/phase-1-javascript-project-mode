@@ -24,8 +24,6 @@ function renderGodCards(gods) {
     godGrid.appendChild(godCard);
   });
 }
-
-// Call the fetchGods function and handle the fetched data
 fetchGods()
   .then(gods => {
     renderGodCards(gods);
