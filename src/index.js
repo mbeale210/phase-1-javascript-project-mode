@@ -1,20 +1,28 @@
+fetch('http://localhost:3000/gods')
+  .then(response => response.json())
+  .then(data => {
+    const gods = data;
+    const godGrid = document.getElementById('god-grid');
 
-const godsAPI = "http://localhost:3000/gods";
-const godsDiv = document.getElementById("display");
-const godsName = document.getElementById("god-name");
+    // Iterate over the gods array and create god cards
+    gods.forEach(god => {
+      const godCard = document.createElement('div');
+      godCard.classList.add('god-card');
 
-fetch(godsAPI)
-  .then((res) => res.json())
-  .then(renderGods);
+      const godImage = document.createElement('img');
+      godImage.src = god.url;
+      godImage.alt = god.name;
+      godCard.appendChild(godImage);
 
-function renderGods(gods) {
-  gods.forEach(renderGod);
-}
+      const godName = document.createElement('p');
+      godName.textContent = god.name;
+      godCard.appendChild(godName);
 
-function renderGod(god) {
-  const godsImageElement = document.createElement("img");
-  godsImageElement.src = gods.url;
-  godsDiv.append(godsImageElement);
-}
+      const likeButton = document.createElement('button');
+      likeButton.classList.add('like-button');
+      likeButton.textContent = 'Like';
+      godCard.appendChild(likeButton);
 
-// db.json populated from api source:https://github.com/betalantz/json-server-collection/blob/main/greek-mythology/db.json
+      godGrid.appendChild(godCard);
+    });
+  });
