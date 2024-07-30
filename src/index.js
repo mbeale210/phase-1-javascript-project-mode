@@ -23,11 +23,10 @@ function renderGodCards(gods) {
     godName.textContent = god.name;
     godCard.appendChild(godName);
 
-    const likeButton = createLikeButton (god);
+    const likeButton = createLikeButton(god);
     godCard.appendChild(likeButton);
 
     godGrid.appendChild(godCard);
-    
   });
 }
 
@@ -35,14 +34,15 @@ function createLikeButton(god) {
   const likeButton = document.createElement("button");
   likeButton.classList.add("like-button");
   likeButton.textContent = "like 🏛";
-  likeButton.addEventListener("click", () => console.log(`${god.name} was liked`))
+  likeButton.addEventListener("click", () =>
+    console.log(`${god.name} was liked`)
+  );
   return likeButton;
 }
 
 fetchGods().then((gods) => {
   renderGodCards(gods);
 });
-
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("search-god");
@@ -69,6 +69,24 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         if (god) {
+          const father = gods.find((g) => g.name === god.father);
+          const mother = gods.find((g) => g.name === god.mother);
+
+          let parentInfo = "";
+          if (father && mother) {
+            if (
+              father.father === mother.father &&
+              father.mother === mother.mother
+            ) {
+              parentInfo = `<p>Like a lot of gods the parents of ${god.name} (${god.father} and ${god.mother}) are related.</p>`;
+            } else {
+              parentInfo = `<p>The parents of ${god.name} parents (${god.father} and ${god.mother}) are not related.</p>`;
+            }
+          } else {
+            parentInfo =
+              "<p>Maybe your parents are related. Maybe they aren't. We just don't know.</p>";
+          }
+
           display.innerHTML = `
             <h2>${god.name}</h2>
             <p>Roman Name: ${god.romanname}</p>
@@ -76,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <p>Symbol: ${god.symbol}</p>
             <p>Father: ${god.father}</p>
             <p>Mother: ${god.mother}</p>
-            <p>"are parents related?"</p>
+            <p>${parentInfo}</p>
             <img src="${god.url}" alt="${god.name}" style="max-width: 300px;">
           `;
         } else {
