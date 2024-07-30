@@ -23,12 +23,25 @@ function renderGodCards(gods) {
     godName.textContent = god.name;
     godCard.appendChild(godName);
 
+    const likeButton = createLikeButton (god);
+    godCard.appendChild(likeButton);
+
     godGrid.appendChild(godCard);
+    
   });
 }
+
+function createLikeButton(god) {
+  const likeButton = document.createElement("button");
+  likeButton.classList.add("like-button");
+  likeButton.textContent = "Like";
+  return likeButton;
+}
+
 fetchGods().then((gods) => {
   renderGodCards(gods);
 });
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("search-god");
