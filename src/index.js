@@ -66,8 +66,8 @@ fetchGods().then((gods) => {s
 
 function createLikeCount(god) {
   const likeCount = document.createElement("span");
-  likeCount.classList.add("like-count");
-  likeCount.textContent = `${god.likes || 0}`;
+  //likeCount.classList.add("like-count");
+  //likeCount.textContent = `${god.likes || 0}`;
   return likeCount;
 }
 
