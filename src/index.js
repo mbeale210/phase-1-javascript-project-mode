@@ -1,3 +1,4 @@
+//json-server --watch db.json
 function fetchGods() {
   return fetch("http://localhost:3000/gods").then((response) =>
     response.json()
