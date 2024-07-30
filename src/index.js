@@ -13,7 +13,8 @@ function renderGodCards(gods) {
   gods.forEach((god) => {
     const godCard = document.createElement("div");
     godCard.classList.add("god-card");
-
+    godCard.setAttribute("data-god-id", god.id);
+    
     const godImage = document.createElement("img");
     godImage.src = god.url;
     godImage.alt = god.name;
@@ -26,23 +27,49 @@ function renderGodCards(gods) {
     const likeButton = createLikeButton(god);
     godCard.appendChild(likeButton);
 
+    const likeCount = createLikeCount(god);
+    godCard.appendChild(likeCount);
+
     godGrid.appendChild(godCard);
   });
-}
-
-function createLikeButton(god) {
-  const likeButton = document.createElement("button");
-  likeButton.classList.add("like-button");
-  likeButton.textContent = "like 🏛";
-  likeButton.addEventListener("click", () =>
-    console.log(`${god.name} was liked`)
-  );
-  return likeButton;
 }
 
 fetchGods().then((gods) => {
   renderGodCards(gods);
 });
+
+
+function createLikeButton(god) {
+  const likeButton = document.createElement("button");
+  likeButton.classList.add("like-button");
+  likeButton.textContent = "Like 🏛";
+  likeButton.addEventListener("click", () => {
+    console.log(`${god.name} was liked`);
+    god.likes = (god.likes || 0) + 1;
+    updateLikeCount(god);
+  });
+  return likeButton;
+}
+fetchGods().then((gods) => {s
+  renderGodCards(gods);
+});
+
+function createLikeCount(god) {
+  const likeCount = document.createElement("span");
+  likeCount.classList.add("like-count");
+  likeCount.textContent = `${god.likes || 0}`;
+  return likeCount;
+}
+
+function updateLikeCount(god) {
+  const likeCount = document.querySelector(`.god-card[data-god-id="${god.id}"] .like-count`);
+  if (likeCount) {
+    likeCount.textContent = `${god.likes || 0}`;
+  }
+}
+
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("search-god");
