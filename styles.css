@@ -104,4 +104,7 @@ h1 {
 .like-button:hover {
   background-color: #8a8585;
 }
+.like-button.liked:hover {
+  background-color: #03a814;
+}
 
