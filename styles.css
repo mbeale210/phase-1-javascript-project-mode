@@ -98,7 +98,7 @@ h1 {
 }
 
 .like-button.liked {
-  background-color: green;
+  background-color: rgb(6, 240, 6);
 }
 
 .like-button:hover {

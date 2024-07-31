@@ -57,6 +57,7 @@ function createLikeButton(god) {
   });
   return likeButton;
 }
+
 fetchGods().then((gods) => {s
   renderGodCards(gods);
 });
@@ -111,13 +112,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
           display.innerHTML = `
             <h2>${god.name}</h2>
-            <p>Roman Name: ${god.romanname}</p>
+            <img src="${god.url}" alt="${god.name}" style="max-width: 300px;">
+            <p>${parentInfo}</p>
             <p>Power: ${god.power}</p>
             <p>Symbol: ${god.symbol}</p>
             <p>Father: ${god.father}</p>
             <p>Mother: ${god.mother}</p>
-            <p>${parentInfo}</p>
-            <img src="${god.url}" alt="${god.name}" style="max-width: 300px;">
+            <p>Roman Name: ${god.romanname}</p>
           `;
         } else {
           display.innerHTML = "<p>No god found with that name.</p>";
