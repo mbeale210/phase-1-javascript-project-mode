@@ -112,8 +112,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
           display.innerHTML = `
             <h2>${god.name}</h2>
-            <img src="${god.url}" alt="${god.name}" style="max-width: 300px;">
             <p>${parentInfo}</p>
+            <img src="${god.url}" alt="${god.name}" style="max-width: 300px;">
             <p>Power: ${god.power}</p>
             <p>Symbol: ${god.symbol}</p>
             <p>Father: ${god.father}</p>
