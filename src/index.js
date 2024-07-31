@@ -130,5 +130,6 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       display.innerHTML = "<p>Please enter a god's name.</p>";
     }
+    form.reset();
   });
 });
