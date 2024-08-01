@@ -42,7 +42,7 @@ fetchGods().then((gods) => {
 function createLikeButton(god) {
   const likeButton = document.createElement("button");
   likeButton.classList.add("like-button");
-  likeButton.textContent = "Like 🏛";
+  likeButton.textContent = "Click to Honor 🏛";
 
   let isLiked = false;
 
@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
           display.innerHTML = `
             <h2>${god.name}</h2>
             <p>${parentInfo}</p>
-            <img src="${god.url}" alt="${god.name}" style="max-width: 300px;">
+            <img src="${god.url}" alt="${god.name}" style="max-width: 225px;">
             <p>Power: ${god.power}</p>
             <p>Symbol: ${god.symbol}</p>
             <p>Father: ${god.father}</p>
